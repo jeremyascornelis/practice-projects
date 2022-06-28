@@ -3,8 +3,15 @@
 class User extends Controller {
 
     public function index() {
-        $data['judul'] = 'Data User';
-        $data['user'] = $this->model("User_model")->getAllUser();
+        if(isset($_SESSION["iduser"])) {
+            $data['judul'] = 'Data User';
+            $data['user'] = $this->model("User_model")->getAllUser();
+        } else {
+            $data['judul'] = 'Login';
+            $this->view('templates/header', $data);
+            $this->view('user/login');
+            $this->view('templates/footer');
+        }
         // $data->view('templates/header', $data);
         // $data->view('User/index');
         // $data->view('templates/footer');
