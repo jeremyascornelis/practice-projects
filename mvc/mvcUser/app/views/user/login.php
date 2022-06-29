@@ -3,7 +3,7 @@
         <div class="col-4">
             <div class="card text-center">
                 <div class="card-header">
-                    Form Login
+                    Form Login Member
                 </div>
                 <div class="card-body">
                     <form action="<?= BASEURL; ?>/user/prosesLogin" method="post">
