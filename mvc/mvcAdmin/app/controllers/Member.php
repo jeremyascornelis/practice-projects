@@ -26,7 +26,7 @@ class Member extends Controller {
     }
 
     public function tambah() {
-        $data['title'] = 'Tambah Member';  
+        $data['judul'] = 'Tambah Member';  
         $this->view('templates/header', $data);
         $this->view('member/tambah');
         $this->view('templates/footer2');

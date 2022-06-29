@@ -10,10 +10,26 @@ class Produk extends Controller {
     }
 
     public function displaycart() {
-      if(isset($_SESSION["iduser"])) {
+      if(isset($_SESSION["id"])) {
         $data['judul'] = 'Detail Pesanan';
         $this->view('templates/header', $data);
         $this->view('produk/displaycart');
+        $this->view('templates/footer');
+      } else {
+        $data['judul'] = 'Login';
+        $this->view('templates/header', $data);
+        $this->view('user/login');
+        $this->view('templates/footer');
+      }
+    }
+
+    public function checkout() {
+      if(isset($_SESSION["id"])) {
+        $data['judul'] = 'Checkout';
+        $id = $_SESSION['id'];
+        $data['pemesan'] = $this->model('Member_model')->getMemberById($id);
+        $this->view('templates/header', $data);
+        $this->view('produk/checkout', $data);
         $this->view('templates/footer');
       } else {
         $data['judul'] = 'Login';
@@ -55,6 +71,21 @@ class Produk extends Controller {
     public function removeall() {
       unset($_SESSION['cart']);
       header("location:".BASEURL."\produk\displaycart");
+    }
+
+    public function tambahpesanan() {
+      $this->model('Produk_model')->tambahDataPesanan($_POST);
+      header('Location: ' . BASEURL . '/home');
+      // if($this->model('Produk_model')->tambahDataPesanan($_POST) > 0) {
+      //     //set flash message
+      //     Flasher::setFlash('berhasil','checkout','success');
+      //     header('Location: ' . BASEURL . '/home');
+      //     exit;
+      // } else {
+      //     Flasher::setFlash('gagal','checkout','danger');
+      //     header('Location: ' . BASEURL . '/home');
+      //     exit;
+      // }
     }
    
     public function detail($id){

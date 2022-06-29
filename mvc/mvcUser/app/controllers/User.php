@@ -3,7 +3,7 @@
 class User extends Controller {
 
     public function index() {
-        if(isset($_SESSION["iduser"])) {
+        if(isset($_SESSION["id"])) {
             $data['judul'] = 'Data User';
             $data['user'] = $this->model("User_model")->getAllUser();
         } else {
@@ -25,7 +25,7 @@ class User extends Controller {
             if(!$data['user']) {
                 echo "User Tidak Valid!";
             } else {
-                $_SESSION["iduser"] = $data["user"]["iduser"];
+                $_SESSION["id"] = $data["user"]["id"];
                 header("location:".BASEURL."\home");
             }
         }

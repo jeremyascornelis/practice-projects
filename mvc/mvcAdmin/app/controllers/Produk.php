@@ -14,8 +14,7 @@ class Produk extends Controller {
         $this->view('user/login');
         $this->view('templates/footer');
       }		
-        	  
-    
+        	
     }
    
     public function detail($id){

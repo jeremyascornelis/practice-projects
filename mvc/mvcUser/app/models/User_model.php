@@ -1,7 +1,7 @@
 <?php
 
 class User_model {
-    private $table = "user";
+    private $table = "member";
     private $db;
 
     public function __construct()
@@ -10,7 +10,7 @@ class User_model {
     }
 
     public function cekUser($username, $pass) {
-        $sql = "SELECT * FROM " . $this->table . " WHERE username='$username' and password='$pass'";
+        $sql = "SELECT * FROM " . $this->table . " WHERE userName='$username' and password='$pass'";
         $this->db->query($sql);
         return $this->db->single();
     }

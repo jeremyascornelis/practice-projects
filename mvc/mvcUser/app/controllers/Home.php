@@ -3,7 +3,7 @@
 class Home extends Controller {
     public function index() {
         // session_start();
-        if(isset($_SESSION["iduser"])) {
+        if(isset($_SESSION["id"])) {
             $data['judul'] = 'Home';
             $this->view('templates/header', $data);
             $this->view('home/index');

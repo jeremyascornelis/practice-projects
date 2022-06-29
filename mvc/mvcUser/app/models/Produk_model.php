@@ -2,6 +2,7 @@
 class Produk_model{
   
 	private $table = "barang";
+	private $table2 = "pesanan";
 	private $db;
 
 	public function __construct(){
@@ -17,6 +18,39 @@ class Produk_model{
 		$this->db->bind('id',$id);
 		return $this->db->single();
 	}
+
+	public function tambahDataPesanan($data) {
+		$nama = $data['tnama'];
+		$alamat = $data['talamat'];
+		$telp = $data['ttelp'];
+		$provinsi = $data['tprovinsi'];
+		$jenis_pembayaran = $data['tbayar'];
+		$norek_ewallet = $data['tnorek'];
+		$jasa_pengiriman = $data['tjasakirim'];
+		$biaya_pengiriman = $data['tbiayajasa'];
+  
+		$this->db->query('SELECT if(max(idorder)is null,1,max(idorder)+1) as maks_id  FROM ' . $this->table2);
+		$data=$this->db->resultSet();
+		foreach ($data as $rec){
+			$id=$rec["maks_id"];
+		}
+
+		$this->db->query('INSERT INTO ' . $this->table2 . ' (idorder, nama_member, alamat, telp, provinsi, jenis_pembayaran, norek_ewallet, jasa_pengiriman, biaya_pengiriman) 
+		VALUES(:id,:nama,:alamat,:telp,:provinsi,:jenis_pembayaran,:norek_ewallet,:jasa_pengiriman,:biaya_pengiriman)');
+		$this->db->bind('id',$id);
+		$this->db->bind('nama',$nama);
+		$this->db->bind('alamat',$alamat);
+		$this->db->bind('telp',$telp);
+		$this->db->bind('provinsi',$provinsi);
+		$this->db->bind('jenis_pembayaran',$jenis_pembayaran);
+		$this->db->bind('norek_ewallet',$norek_ewallet);
+		$this->db->bind('jasa_pengiriman',$jasa_pengiriman);
+		$this->db->bind('biaya_pengiriman',$biaya_pengiriman);
+  
+		$this->db->execute();
+  
+		return $this->db->rowCount();
+	  }
  
 	public function uploadFoto($ft){
 	    $namaFile = $ft['name'];

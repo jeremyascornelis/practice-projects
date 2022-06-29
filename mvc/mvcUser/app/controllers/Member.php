@@ -2,7 +2,7 @@
 
 class Member extends Controller {
     public function index(){
-        if(isset($_SESSION["iduser"])) {
+        if(isset($_SESSION["id"])) {
             $data['judul'] = 'Daftar Member';
             $data['member'] = $this->model('Member_model')->getAllMember();
             $this->view('templates/header', $data);
