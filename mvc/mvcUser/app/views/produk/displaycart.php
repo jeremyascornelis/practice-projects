@@ -1,5 +1,5 @@
 
-<div class="container mt-3">
+<div class="container mt-3 ps-4">
     <h1>Halaman Order</h1>
     <a href="<?= BASEURL; ?>/produk"><button class='btn btn-primary fs-5 mt-3'>Kembali ke Halaman Produk</button></a>
     <a href="<?= BASEURL; ?>/produk/checkout"><button class='btn btn-primary fs-5 mt-3'>Checkout</button></a>

@@ -3,7 +3,7 @@ if(empty($_SESSION['cart']['arrCart']))
     $_SESSION['cart']['arrCart'] = array();
 ?>
 
-<div class="container mt-3 mb-5">
+<div class="container mt-3 mb-5 ps-4">
 <div class="row">
 <h1 class="mb-4">Daftar Produk</h1>
     <?php foreach ($data['produk'] as $p) : ?>

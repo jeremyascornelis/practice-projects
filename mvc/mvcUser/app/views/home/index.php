@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container ps-4">
     <div class="jumbotron mt-4">
         <h1 class="display-4"><b>Home</b></h1>
-        <p class="lead">Selamat Datang di Toko Online</p>
+        <p class="fs-4">Selamat Datang di PlantShop</p>
     </div>
 </div>

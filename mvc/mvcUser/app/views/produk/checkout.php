@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3 ps-4">
     <h1>Halaman Order</h1>
     <div class="d-flex flex-row">
         

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ps-4">
     <div class="row mt-3 justify-content-center">
         <div class="col-4">
             <div class="card text-center">
