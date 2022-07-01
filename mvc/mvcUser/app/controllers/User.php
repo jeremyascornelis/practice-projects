@@ -23,7 +23,9 @@ class User extends Controller {
             $pass = $_POST["tpass"];
             $data['user'] = $this->model('User_model')->cekUser($user, $pass);
             if(!$data['user']) {
-                echo "User Tidak Valid!";
+                echo  "<script>alert('User tidak valid! Silahkan login ulang!');
+                window.location.href = '". BASEURL ."/home';
+                </script>";
             } else {
                 $_SESSION["id"] = $data["user"]["id"];
                 header("location:".BASEURL."\home");
