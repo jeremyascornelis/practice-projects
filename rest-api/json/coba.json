@@ -1,0 +1,31 @@
+[
+{
+    "nama" : "Jeremyas Cornelis",
+    "umur" : 21,
+    "nim"  : "A11202012415",
+    "lulus" : true,
+    "hobby" : [
+        "coding",
+        "gaming",
+        "baca buku"
+    ],
+    "pembimbing" : {
+        "pembimbing1" : "Kevin Setiadi",
+        "pembimbing2" : "Jovan Brian"
+    }
+},
+{
+    "nama" : "Vano Vincent",
+    "umur" : 22,
+    "nim"  : "A11202012401",
+    "lulus" : true,
+    "hobby" : [
+        "gaming",
+        "baca buku"
+    ],
+    "pembimbing" : {
+        "pembimbing1" : "Kevin Setiadi",
+        "pembimbing2" : "Jovan Brian"
+    }
+}
+]
