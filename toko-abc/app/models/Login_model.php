@@ -20,8 +20,8 @@ class Login_model {
         return $this->db->resultSet();
     }
 
-    public function getAllUserById($id) {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+    public function getUserById($id) {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE iduser=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }

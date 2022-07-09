@@ -1,6 +1,11 @@
+<?php
+    //get user first name
+    $namauser = explode(' ', $data['user']['nama_user']);
+    $namadepan = $namauser[0];
+?>
 <div class="container mt-3 mb-5 ps-4">
 <div class="row">
-<h1 class="mb-4 text-center" style="color:#21313C;">Selamat Berbelanja</h1>
+<h1 class="mb-4 text-center" style="color:#21313C;">Selamat Berbelanja, <span style="color: #EE5B2E;"><?= $namadepan ?></span></h1>
     <?php foreach ($data['produk'] as $p) : ?>
         <div class="col-4 mb-3">
             <div class="card shadow p-3 mb-5 bg-white rounded" >
