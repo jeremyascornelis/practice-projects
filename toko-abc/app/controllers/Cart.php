@@ -5,8 +5,9 @@ class Cart extends Controller {
     public function index() {
         if(isset($_SESSION["iduser"])) {
             $data['judul'] = 'Keranjang';
+            $data['user'] = $this->model('Login_model')->getUserById($_SESSION["iduser"]);
             $this->view('templates/header2', $data);
-            $this->view('cart/index');
+            $this->view('cart/index', $data);
             $this->view('templates/footer');
         } else {
             $data['judul'] = 'Login';
@@ -56,5 +57,23 @@ class Cart extends Controller {
         unset($data[$id]);
         $_SESSION["cart"]["arrCart"] = array_merge($data);
         header("location:".BASEURL."\cart");
+    }
+
+    public function getDataOngkir() {
+        $this->view('cart/data/dataongkir');
+    }
+
+    public function getDataPaket() {
+        $this->view('cart/data/datapaket');
+    }
+
+    public function getDataEkspedisi() {
+        $this->view('cart/data/dataekspedisi');
+    }
+
+    public function insData() {
+        $this->model('Produk_model')->tambahDataPesanan($_POST);
+        unset($_SESSION['cart']);
+        header("location:".BASEURL."/home");
     }
 }
