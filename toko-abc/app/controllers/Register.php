@@ -28,4 +28,9 @@ class Register extends Controller {
         $this->view('register/data/datakodepos');
     }
 
+    public function daftar() {
+        $this->model('Register_model')->addData($_POST);
+        header('Location: ' . BASEURL . '/login');
+    }
+
 }

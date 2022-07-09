@@ -93,7 +93,7 @@ body {
 </head>
 <body>
 <div class="signup-form">
-    <form action="" method="POST">
+    <form action="<?= BASEURL; ?>/register/daftar" method="POST">
 		<h2>Registrasi</h2>
 		<p>Silahkan isi form ini untuk membuat akun!</p>
 		<hr>
@@ -104,7 +104,7 @@ body {
 						<span class="fa fa-user"></span>
 					</span>                    
 				</div>
-				<input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required="required">
+				<input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required="required">
 			</div>
         </div>
         <div class="form-group">
@@ -124,7 +124,7 @@ body {
 						<span class="fa fa-phone"></span>
 					</span>                    
 				</div>
-				<input type="text" class="form-control" name="no_telp" placeholder="Masukkan NoTelp" required="required">
+				<input type="text" class="form-control" name="no_telp" placeholder="Nomor Telepon" required="required">
 			</div>
         </div>
 		<div class="form-group">
@@ -155,7 +155,7 @@ body {
 						<span class="fa fa-address-card"></span>
 					</span>                    
 				</div>
-				<input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat" required="required">
+				<input type="text" class="form-control" name="alamat" placeholder="Alamat" required="required">
 			</div>
         </div>
         <div class="form-group">
@@ -209,7 +209,7 @@ body {
 			</div>
         </div>
 		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg" name="register">Daftar</button>
+            <button type="submit" class="btn btn-primary btn-lg" name="submit">Daftar</button>
         </div>
     </form>
 	<div class="text-center" style="color: #21313C;">Sudah punya akun? <a href="<?= BASEURL; ?>/login/" style="color: #21313C;">Login</a></div>

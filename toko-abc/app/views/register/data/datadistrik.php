@@ -37,7 +37,7 @@ if ($err) {
 
     echo "<option value=''>Pilih Distrik</option>";
     foreach ($datadistrik as $key => $tiap_distrik) {
-        echo "<option value='". $tiap_distrik["city_id"] ."' id_distrik='". $tiap_distrik["city_id"] ."' nama_provinsi='". $tiap_distrik["province"] ."' nama_distrik='". $tiap_distrik["city_name"] ."' tipe_distrik='". $tiap_distrik["type"] ."' kodepos='". $tiap_distrik["postal_code"] ."'> ";
+        echo "<option value='".$tiap_distrik["city_id"].",". $tiap_distrik["city_name"]."' id_distrik='". $tiap_distrik["city_id"] ."' nama_provinsi='". $tiap_distrik["province"] ."' nama_distrik='". $tiap_distrik["city_name"] ."' tipe_distrik='". $tiap_distrik["type"] ."' kodepos='". $tiap_distrik["postal_code"] ."'> ";
         echo $tiap_distrik["type"] . " ";
         echo $tiap_distrik["city_name"];
         echo "</option>";

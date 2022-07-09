@@ -36,7 +36,7 @@ if($err) {
     echo "<option value=''>Pilih Provinsi</option>";
 
     foreach ($dataprovinsi as $key => $tiap_provinsi) {
-        echo "<option value='". $tiap_provinsi["province_id"] ."' id_provinsi='". $tiap_provinsi["province_id"] ."'>";
+        echo "<option value='". $tiap_provinsi["province"] ."' id_provinsi='". $tiap_provinsi["province_id"] ."'>";
         echo $tiap_provinsi["province"];
         echo "</option>";
     }
