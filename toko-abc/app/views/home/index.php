@@ -9,7 +9,7 @@
     <?php foreach ($data['produk'] as $p) : ?>
         <div class="col-4 mb-3">
             <div class="card shadow p-3 mb-5 bg-white rounded" >
-                <img class="card-img-top" src="<?= BASEURL; ?>/img/<?= $p['gambar']; ?>" alt="Card image cap">
+                <img class="card-img-top" src="<?= BASEURL; ?>/img/<?= $p['gambar']; ?>" alt="Card image cap" width="200px">
                 <div class="card-body">
                     <h5 class="card-title fs-3"><?= $p['nama_produk']; ?></h5>
                     <p class="card-text fs-5"><?= $p['deskripsi'];?></p>

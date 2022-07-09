@@ -6,7 +6,7 @@ class Home extends Controller {
             $data['judul'] = 'Produk';
             $data['produk'] = $this->model('Produk_model')->getAllProduct();
             $data['user'] = $this->model('Login_model')->getUserById($_SESSION["iduser"]);
-            $this->view('templates/header', $data);
+            $this->view('templates/header2', $data);
             $this->view('home/index', $data);
             $this->view('templates/footer');
         } else {

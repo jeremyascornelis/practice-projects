@@ -125,7 +125,7 @@ body {
             <button type="submit" class="btn btn-primary btn-lg" name="submit">Masuk</button>
         </div>
     </form>
-	<div class="text-center" style="color: #21313C;">Belum punya akun? <a href="<?= BASEURL; ?>/register/" style="color: #21313C;">Registrasi</a></div>
+	<div class="text-center" style="color: #21313C;">Belum punya akun? <a href="<?= BASEURL; ?>/register" style="color: #21313C;">Registrasi</a></div>
 </div>
 </body>
 </html>

@@ -212,7 +212,7 @@ body {
             <button type="submit" class="btn btn-primary btn-lg" name="submit">Daftar</button>
         </div>
     </form>
-	<div class="text-center" style="color: #21313C;">Sudah punya akun? <a href="<?= BASEURL; ?>/login/" style="color: #21313C;">Login</a></div>
+	<div class="text-center" style="color: #21313C;">Sudah punya akun? <a href="<?= BASEURL; ?>/login" style="color: #21313C;">Login</a></div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
