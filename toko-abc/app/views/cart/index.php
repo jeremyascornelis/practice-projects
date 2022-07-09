@@ -30,7 +30,16 @@
                                         $totalPrice += $val;
                                     }    
                                 ?>
-                                <td><?php echo $val ?></td>
+                                <td>
+                                    <?php 
+                                        if($key == 'hrg') {
+                                            echo "Rp. ". number_format($val) ;
+                                        } else {
+                                            echo $val;
+                                        }
+                                        
+                                    ?>
+                                </td>
                             <?php endforeach; ?>
                             <td><a href="<?= BASEURL; ?>/cart/removeItem/<?= $i;?>" class="btn btn-danger">Remove</a></td>
                         </tr>

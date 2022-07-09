@@ -20,9 +20,10 @@
                     <li class="nav-item">
                         <a class="nav-link fs-4" aria-current="page" href="<?= BASEURL; ?>/cart">Cart</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link fs-5" href="<?= BASEURL;?>/produk">Produk</a>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="<?= BASEURL;?>/riwayat">Histori Transaksi</a>
                     </li>
+                    <!-- 
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="<?= BASEURL;?>/produk/displaycart">Cart</a>
                     </li>
