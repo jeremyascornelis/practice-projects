@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller {
+class Register extends Controller {
     public function index() {
         if(isset($_SESSION["id"])) {
             $data['judul'] = 'Produk';
@@ -9,9 +9,9 @@ class Home extends Controller {
             $this->view('home/index', $data);
             $this->view('templates/footer');
         } else {
-            $data['judul'] = 'Login';
+            $data['judul'] = 'Registrasi';
             $this->view('templates/header', $data);
-            $this->view('login/index', $data);
+            $this->view('register/index', $data);
             $this->view('templates/footer');
         }
     }
