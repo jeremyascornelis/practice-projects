@@ -2,6 +2,12 @@
     //get user first name
     $namauser = explode(' ', $data['user']['nama_user']);
     $namadepan = $namauser[0];
+
+    //create session for cart
+    if(empty($_SESSION['cart']['arrCart'])) {
+        $_SESSION['cart']['arrCart'] = array();
+    }
+        
 ?>
 <div class="container mt-3 mb-5 ps-4">
 <div class="row">
@@ -15,7 +21,7 @@
                     <p class="card-text fs-5"><?= $p['deskripsi'];?></p>
                     <h6 class="card-text fs-4 mb-4">Rp. <?= number_format($p['harga']); ?></h6>
                     <!-- <a href="<?= BASEURL; ?>/produk/addcart/<?= $p['id'];?>" class="btn btn-primary">Order</a> -->
-                    <a href="#" class="btn btn-primary text-center fs-5" >Masukkan Keranjang</a>
+                    <a href="<?= BASEURL; ?>/cart/addcart/<?= $p['idproduk'];?>" class="btn btn-primary text-center fs-5" >Masukkan Keranjang</a>
                 </div>
             </div>
         </div>

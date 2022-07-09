@@ -14,7 +14,7 @@ class Produk_model {
 	}
 
 	public function getProductById($id){
-		$sql="SELECT * FROM " . $this->table . " WHERE id=:id";
+		$sql="SELECT * FROM " . $this->table . " WHERE idproduk=:id";
 		$this->db->query($sql);
 		$this->db->bind('id',$id);
 		return $this->db->single();
