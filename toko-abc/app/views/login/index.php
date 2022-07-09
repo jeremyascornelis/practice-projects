@@ -91,12 +91,12 @@ body {
 </head>
 <body>
 <div class="signup-form">
-    <form action="" method="POST">
+    <form action="<?= BASEURL; ?>/login/prosesLogin" method="POST">
 		<h2>Login</h2>
 		<p>Silahkan isi form ini untuk masuk!</p>
-        <?php if(isset($error)): ?>
+        <!-- <?php if(isset($error)): ?>
             <p style="color: red; font-style: italic">Email atau Password salah</p>
-        <?php endif; ?>
+        <?php endif; ?> -->
 		<hr>
         <div class="form-group">
 			<div class="input-group">
@@ -122,7 +122,7 @@ body {
 			<label class="form-check-label"><input type="checkbox" name="remember"> Remember Me</label>
 		</div> -->
 		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg" name="login">Masuk</button>
+            <button type="submit" class="btn btn-primary btn-lg" name="submit">Masuk</button>
         </div>
     </form>
 	<div class="text-center" style="color: #21313C;">Belum punya akun? <a href="<?= BASEURL; ?>/register/" style="color: #21313C;">Registrasi</a></div>

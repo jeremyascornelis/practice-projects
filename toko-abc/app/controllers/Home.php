@@ -2,7 +2,7 @@
 
 class Home extends Controller {
     public function index() {
-        if(isset($_SESSION["id"])) {
+        if(isset($_SESSION["iduser"])) {
             $data['judul'] = 'Produk';
             $data['produk'] = $this->model('Produk_model')->getAllProduct();
             $this->view('templates/header', $data);

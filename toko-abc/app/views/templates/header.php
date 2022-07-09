@@ -31,7 +31,7 @@
                     </li> -->
                 </ul>
                 <span class="navbar-text">
-                <button class="btn btn-danger me-5"><a href="<?= BASEURL;?>/user/logout" style="color: #fff; font-size: 16px; text-decoration:none;">Logout</a></button>
+                <button class="btn btn-danger me-5"><a href="<?= BASEURL;?>/login/logout" style="color: #fff; font-size: 16px; text-decoration:none;">Logout</a></button>
                 </span>
             </div>
         </div>
