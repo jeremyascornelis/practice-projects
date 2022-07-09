@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <style>
 body {
 	color: #fff;
@@ -113,7 +114,7 @@ body {
 						<i class="fa fa-paper-plane"></i>
 					</span>                    
 				</div>
-				<input type="email" class="form-control" name="email" placeholder="Alamat Email" required="required">
+				<input type="text" class="form-control" name="username" placeholder="Username" required="required">
 			</div>
         </div>
         <div class="form-group">
@@ -136,7 +137,7 @@ body {
 				<input type="password" class="form-control" name="password" placeholder="Password" required="required">
 			</div>
         </div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<div class="input-group">
 				<div class="input-group-prepend">
 					<span class="input-group-text">
@@ -146,6 +147,52 @@ body {
 				</div>
 				<input type="password" class="form-control" name="password2" placeholder="Konfirmasi Password" required="required">
 			</div>
+        </div> -->
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-address-card"></span>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-map"></span>
+					</span>                    
+				</div>
+				<select class="form-control" name="nama_provinsi">
+                            
+                </select>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fas fa-city" style="font-size: 20px;"></span>
+					</span>                    
+				</div>
+				<select class="form-control" name="nama_distrik">
+                            
+                </select>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-map-pin"></span>
+					</span>                    
+				</div>
+				<select class="form-control" name="kodepos">
+                            
+                </select>
+			</div>
         </div>
         <div class="form-group">
 			<div class="input-group">
@@ -154,7 +201,11 @@ body {
 						<span class="fa fa-user"></span>
 					</span>                    
 				</div>
-				<input type="text" class="form-control" name="peran" placeholder="Masukkan Peran" required="required">
+				<select name="gender" id="gender" class="form-control">
+                    <option>Pilih gender</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
 			</div>
         </div>
 		<div class="form-group">
@@ -163,5 +214,44 @@ body {
     </form>
 	<div class="text-center" style="color: #21313C;">Sudah punya akun? <a href="<?= BASEURL; ?>/login/" style="color: #21313C;">Login</a></div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'post',
+            url: '<?= BASEURL; ?>/register/getDataProvinsi',
+            success: function(hasil_provinsi) {
+                // console.log(hasil);
+                $("select[name=nama_provinsi]").html(hasil_provinsi);
+            }
+        });
+
+        $("select[name=nama_provinsi]").on("change", function() {
+            //get id_provinsi that has been change
+            let id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
+            $.ajax({
+                type: 'post',
+                url: '<?= BASEURL; ?>/register/getDataDistrik',
+                data: 'id_provinsi=' + id_provinsi_terpilih,
+                success: function(hasil_distrik) {
+                    // console.log(hasil_distrik);
+                    $("select[name=nama_distrik]").html(hasil_distrik);
+                }
+            });
+
+            $.ajax({
+                type: 'post',
+                url: '<?= BASEURL; ?>/register/getDataKodePos',
+                data: 'id_provinsi=' + id_provinsi_terpilih,
+                success: function(hasil_kodepos) {
+                    // console.log(hasil_distrik);
+                    $("select[name=kodepos]").html(hasil_kodepos);
+                }
+            });
+        })
+    });
+</script>
+
 </body>
 </html>

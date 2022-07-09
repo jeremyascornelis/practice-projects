@@ -15,4 +15,17 @@ class Register extends Controller {
             $this->view('templates/footer');
         }
     }
+
+    public function getDataProvinsi() {
+        $this->view('register/data/dataprovinsi');
+    }
+
+    public function getDataDistrik() {
+        $this->view('register/data/datadistrik');
+    }
+
+    public function getDataKodePos() {
+        $this->view('register/data/datakodepos');
+    }
+
 }
